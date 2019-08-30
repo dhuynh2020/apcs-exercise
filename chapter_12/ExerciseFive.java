@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import javafx.scene.shape.Line;
+
 
 public class ExerciseFive
 {
@@ -9,27 +9,28 @@ public class ExerciseFive
 
         Scanner scan = new Scanner(System.in);
         long words; 
-        long x;
-        long y;
-        long w;
-        int len;
+        int x;
+        int y;
+        String w;
         String str = new String("Enter a String:" );
+        System.out.println(str);
+        w = scan.nextLine();
         
-        len = str.length();
         
         System.out.println("Beginning Index: ");
-        x = scan.nextLong();
+        x = scan.nextInt();
 
         System.out.println("Ending Index: ");
-        y = scan.nextLong();
+        y = scan.nextInt();
 
-        String sub = str.subString(x,y);
+        String sub = w.substring(x,y);
 
 
     
         
-        
+        System.out.println(w);
         System.out.println(sub);
+        
 
     }
 }
