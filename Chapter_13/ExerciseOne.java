@@ -16,7 +16,7 @@ public class ExerciseOne
         inData2 = scan.nextDouble();
 
 
-        System.out.println("Annual cost" + (inData*inData2));
+        System.out.println("Annual cost " + (inData*inData2));
     
     }
 }

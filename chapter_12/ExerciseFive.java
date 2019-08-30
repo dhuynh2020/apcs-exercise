@@ -1,19 +1,31 @@
 import java.util.Scanner;
 
+import javafx.scene.shape.Line;
+
 public class ExerciseFive
 {
-    public static void main (String[] args)
+    public static void main (Strinwg[] args)
     {
 
         Scanner scan = new Scanner(System.in);
         long words; 
         long x;
         long y;
-        int w; 
-        String str = new String("Enter a String:" + w);
-        w = scan.nextLine;
+        long w;
+        int len;
+        String str = new String("Enter a String:" + w );
+        w = scan.nextLong();
+        len = str.length();
         
-        String sub = str.substring();
+        System.out.println("Beginning Index: ");
+        x = scan.nextLong();
+
+        System.out.println("Ending Index: ");
+        y = scan.nextLong();
+
+        String sub = str.subString(x,y);
+
+
     
         
   
