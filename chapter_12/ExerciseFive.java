@@ -7,22 +7,17 @@ public class ExerciseFive
 
         Scanner scan = new Scanner(System.in);
         long words; 
-        int beginIndex;
-        int endIndex;
+        long x;
+        long y;
         int w; 
         String str = new String("Enter a String:" + w);
-        w = scan.nextLong
+        w = scan.nextLine;
         
         String sub = str.substring();
     
         
-        
-        System.out.printkn("Enter beginning index: " + beginIndex ); 
-
-        System.out.printkn("Enter ending index: " + endIndex );
-
-
-        System.out.println(originalString);
+  
+        System.out.println(sub);
 
     }
 }
