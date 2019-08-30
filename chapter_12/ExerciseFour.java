@@ -6,7 +6,7 @@ public class ExerciseFour
     {
 
         Scanner scan = new Scanner(System.in);
-        long V; 
+        long V;         
         long R;
         double I;
 
@@ -14,7 +14,7 @@ public class ExerciseFour
         V = scan.nextLong();
         System.out.println("Input the resistance");
         R = scan.nextLong();
-        
+    
         System.out.println(I = (V + 0.0) / R);
 
 
