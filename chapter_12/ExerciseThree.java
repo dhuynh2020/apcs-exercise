@@ -7,17 +7,20 @@ public class ExerciseThree
     {
         double inData;
         Scanner scan = new Scanner ( System.in);
-        double solved;
-        int solved2;
+        int dollars;
+        int qarters;
+        int dimes;
+        int nickels;
+        int pennies;
+
 
         System.out.println("Input Cents");
-        inData = scan.nextInt();
-        solved = indata / 100;
-        solved2 = indata % 100;
-
-        System.out.println("That is " + solved + (" and ") + solved2);
-        System.out.println("you get " + ");
-        
+        dollars = inData /100;
+        quaters = (inData % 100) /25;
+        dimes = ((inData % 100) % 25) / 10;
+        nickels = (((inData % 100) % 25) % 10) /5;
+        pennies = ((((inData % 100) % 25) % 10) % 5) / 1;       
+        System.out.println("You gave" + inData + " in change which would give you " + dollars + " dollars, " + quaters + " quaters, " + dimes + "  dimes, " + nickels + " nickels, and " + pennies + " cents."
 
     }
 }

@@ -13,7 +13,7 @@ public class ExerciseFive
         String str = new String("Enter a String:" + w);
         w = scan.nextLong
         
-        String sub = str.substring(int beginIndex; int endIndex;);
+        String sub = str.substring();
     
         
         
