@@ -4,7 +4,7 @@ import javafx.scene.shape.Line;
 
 public class ExerciseFive
 {
-    public static void main (Strinwg[] args)
+    public static void main (String[] args)
     {
 
         Scanner scan = new Scanner(System.in);
@@ -13,8 +13,8 @@ public class ExerciseFive
         long y;
         long w;
         int len;
-        String str = new String("Enter a String:" + w );
-        w = scan.nextLong();
+        String str = new String("Enter a String:" );
+        
         len = str.length();
         
         System.out.println("Beginning Index: ");
@@ -28,7 +28,7 @@ public class ExerciseFive
 
     
         
-  
+        
         System.out.println(sub);
 
     }
