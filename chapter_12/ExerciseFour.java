@@ -6,7 +6,7 @@ public class ExerciseFour
     {
 
         Scanner scan = new Scanner(System.in);
-        long V; 
+        long V;         
         long R;
         double I;
 
