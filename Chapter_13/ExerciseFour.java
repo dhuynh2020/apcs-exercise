@@ -6,7 +6,7 @@ public class ExerciseFour
         float x;
         float y;
         double solved2;
-        double solved;
+        int solved;
         Scanner scan = new Scanner (System.in);
         
         System.out.println("Enter X:");
@@ -14,7 +14,7 @@ public class ExerciseFour
         System.out.println("Enter Y:");
         y = scan.nextFloat();
 
-        solved = (2 + (1/x + 1/y) / 2);
+        solved = Math.round( 2/  (1/x + 1/y));
 
 
 
