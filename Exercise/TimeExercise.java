@@ -19,7 +19,7 @@ public class TimeExercise
         int seleft;
 
 
-        System.out.println("Enter Hour:");
+        System.out.println("Enter Future Hour:");
         hour = scan.nextInt();
         System.out.println("Enter Minute");
         minute = scan.nextInt();
@@ -33,14 +33,13 @@ public class TimeExercise
         b = LocalDateTime.now().getMinute();
         d = LocalDateTime.now().getSecond();
 
-        hrleft =  hour + a;
-        if (hrleft > 12);
-            hrleft = hour - 12;
-
-
-        mileft = minute + b; 
+        if (a >= 12){
+            a = a - 12;
+        }
+        hrleft = hour -a;
+        mileft = minute - b; 
         
-        seleft = second +  d; 
+        seleft = second -  d; 
         //if seleft()
 
 
