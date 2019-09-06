@@ -52,7 +52,7 @@ public class TimeExercise
         
         LocalDateTime time = LocalDateTime.now();
         System.out.println(time);
-
+        
        
     }
 }
