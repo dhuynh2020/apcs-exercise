@@ -14,11 +14,7 @@ public class ExerciseFour
         System.out.println("Enter Y:");
         y = scan.nextFloat();
 
-<<<<<<< HEAD
-        solved = (1/x + 1/y) / 2;
-=======
         solved = Math.round( 2/  (1/x + 1/y));
->>>>>>> 580ba6466b6cf2604b902da8dd345ad932be77b3
 
 
 

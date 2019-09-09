@@ -14,7 +14,7 @@ public class ExerciseThree
         x = Math.log(x);
 
         n = Math.log(2);
-        solved = x / n;
+        solved = x / n; 
         System.out.println("Base 2 log of " + x + " is " + solved);
 
         
