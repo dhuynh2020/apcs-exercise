@@ -4,10 +4,11 @@ public class Exercise4
     public static void main (String[]args)
     {
         Scanner scan = new Scanner(System.in);
-        int strenght;
+        int strength;
         int health;
         int luck;
         int name;
+        int total = 0 == 15 - luck - health - strength;
         
 
         System.out.println("Welcome to Yertle's Quest");
