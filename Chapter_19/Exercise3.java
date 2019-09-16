@@ -7,21 +7,28 @@ public class Exercise3
         Scanner scan = new Scanner(System.in);
         String word;
         String word2;
-        int space = 0;
+        String space = new String();
         String period;
+        int n;
 
-
+        
         System.out.println("Enter first word");
         word = scan.nextLine();
         System.out.println("Enter second word");
         word2 = scan.nextLine();
-        
-        while(space <= 30){
-            System.out.println(period);
-            space = space + 1; 
+        n = word.length() + word2.length();
+
+
+        System.out.println(word);
+
+        while(word.length() + word2.length() + space.length() < 30){
+            System.out.println(".");
+            space = space + 1;
             
         } 
-        System.out.println(word + word2);
+        System.out.println(word2);
+
+        // System.out.println(word + space + word2);
 
     }
-}
+}   

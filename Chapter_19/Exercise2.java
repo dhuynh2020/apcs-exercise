@@ -14,15 +14,17 @@ public class Exercise2
         n = scan.nextInt();
 
         sum= (n*(n+1))/2;
-        System.out.println( "Sum = " + sum);
+        System.out.println( "Formula Sum = " + sum);
         
         
-        while ( sum <= end ){
+        while ( x <= n ){
             
-            end = sum + 1;
-            x = x + end;         
-            System.out.println("Loop Sum: "  + sum);
-
+            // end = sum + 1;
+            x = x + 1;         
+            end = (n*(n+1))/2;
+            
+            
         }
+        System.out.println("Loop Sum: "  + end);
     }
 }
