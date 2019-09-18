@@ -3,28 +3,23 @@ public class Exercise2
 {
     public static void main(String[]args)
     {
-        Scanner scan = new Scanner (System.in);
-        int n = 0;
-        int sum = 55; 
-        // int num;
-        int end = 0;
-        int x = 0;
+        Scanner scan = new Scanner(System.in);
 
+        int n, formula_sum, total;  
+        
         System.out.println("Enter N:");
         n = scan.nextInt();
-
-        sum= (n*(n+1))/2;
-        System.out.println( "Formula Sum = " + sum);
         
+                formula_sum = (n*(n+1))/2;
+                total=0;
         
-        while ( x <= n ){
-            
-            // end = sum + 1;
-            x = x + 1;         
-            end = (n*(n+1))/2;
-            
-            
+        while ( n>0 )
+        {
+          total+=n;  
+          n-=1;
         }
-        System.out.println("Loop Sum: "  + end);
+
+        System.out.println("Loop Sum: "+total);
+        System.out.println("Formula Sum: "+formula_sum);
     }
 }
