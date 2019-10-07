@@ -5,43 +5,56 @@ public class SquareRootGame
     public static void main(String[]args)
     {
         Scanner scan = new Scanner(System.in);
-        Random rand = new Random(100);
+        Random rand = new Random(100) ;
 
-        String FirstPlayer = "";
-        String SecondPlayer = "";
-        double answer1, answer2 = 0;
-        int round, FirstPlayerWins, SecondPlayerWins = 0;
-        double FirstPlayerDiff, SecondPlayerDiff; 
+        String firstPlayer = "";
+        String secondPlayer = "";
+        double answer1;
+        double answer2;
+        int round = 0; 
+        int firstPlayerWins = 0;
+        int secondPlayerWins = 0;
+        double firstPlayerDiff, secondPlayerDiff; 
+
         System.out.println("How many rounds?");
         round = scan.nextInt();
+
         System.out.println("First Player, Sign in --> ");
-        FirstPlayer = scan.nextLine();
+        scan.nextLine();
+        firstPlayer = scan.nextLine();
         System.out.println("Second Player, Sign in --> ");
-        SecondPlayer = scan.nextLine();
+        secondPlayer = scan.nextLine();
 
         boolean game = false;
+
         while(!game ){
-            double x = Math.random();
+            double x = Math.random() * 99;
             System.out.println("What is the square root of " + x + " ?" );
             answer1 = scan.nextDouble();
-            System.out.println(FirstPlayer + " You guessed " + answer1);
+            System.out.println(firstPlayer + " You guessed " + answer1);
             answer2 = scan.nextDouble();
-            System.out.println(SecondPlayer + " You guesssed " + answer2);      
-            FirstPlayerDiff = Math.abs(x - answer1);
-            SecondPlayerDiff = Math.abs(x - answer2); 
+            System.out.println(secondPlayer + " You guesssed " + answer2);      
+            firstPlayerDiff = Math.abs(x - answer1);
+            secondPlayerDiff = Math.abs(x - answer2); 
 
-        } if ( FirstPlayerDiff < SecondPlayerDiff){
-            System.out.println( FirstPlayer + " wins!");
+         if ( firstPlayerDiff < answer1){
+            System.out.println( firstPlayer + " wins!");
             round -= 1;
-            FirstPlayerWins = FirstPlayerWins + 1; 
-        } else if( FirstPlayerDiff > SecondPlayerDiff) { 
-            System.out.println(SecondPlayer + " wins!");
+            firstPlayerWins+=1; 
+        } else { 
+            System.out.println(secondPlayer + " wins!");
             round -= 1;
-            SecondPlayerWins = SecondPlayerWins + 1;
-        } else if( round == 0) { 
+            secondPlayerWins+= 1;
+        }
+        if( round == 0) { 
             game = true;
         }
-        
+        if (firstPlayerWins > secondPlayerWins){
+            System.out.println(firstPlayer + " wins the game with " + firstPlayerWins + " points");
+        } else if ( firstPlayerWins < secondPlayerWins) { 
+            System.out.println( secondPlayer + " wins the game with " + secondPlayerWins + " points");
 
+        }
+        }
     }
 }
