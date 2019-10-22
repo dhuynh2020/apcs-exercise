@@ -8,13 +8,17 @@ public class GPA{
         double gpa = student.calculateGPA();
         System.out.println(gpa);
 
-        gpa= student2.calculateGPA();
+        gpa = student2.calculateGPA();
 
         String name = student.getName();
         System.out.println(name);
+        // student.setMathScore("A");
+        // student.setCsScore("A");
+        // student.setEngScore("A");
 
         student.gradeLevel(11);
-        System.out.println(student.GradeLevel());
+        System.out.println(student.getGradeLevel());
+        System.out.println(student.summarizeGPA());
     
     }
 }

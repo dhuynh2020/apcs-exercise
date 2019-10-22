@@ -13,9 +13,20 @@ public class Student{
         this.name = name; 
         this.gradeLevel = gradeLevel;
 
-       this.mathScore ="F";
-       this.engScore ="F";
-       this.csScore ="F";
+        this.mathScore ="F";
+        this.engScore ="F";
+        this.csScore ="F";
+
+    }
+
+    public Student(String name, int gradeLevel, String mathScore,
+                    String engScore, String csScore){
+        setName(name);
+        setGradeLevel(gradeLevel);
+        
+        setMathScore(mathScore);
+        setEngScore(engScore);
+        setCsScore(csScore);
 
     }
 
@@ -28,7 +39,19 @@ public class Student{
         return this.name;
     }
 
-    public String getGradeLevel() {
+    public String getMathScore() {
+        return this.mathScore;
+    }
+
+    public String getCsScore() {
+        return this.csScore;
+    }
+
+    publi String getEngScore(){
+        return this.engScore;
+    }
+
+    public int getGradeLevel() {
         return this.gradeLevel;
     }    
 
@@ -36,14 +59,37 @@ public class Student{
         this.name = name;
     }
 
-    public void setGradeLevel(int gradeleve) { 
-        if (gradeLevel >= 9 && gradeLeve <=12){
-            this.gradeLevel= gradeLevel;
+    public void setGradeLevel(int gradeLevel) { 
+        if (gradeLevel >= 9 && gradeLevel <=12){
+            this.gradeLevel = gradeLevel;
         }
 
     }
-    // calculate gpa 
+    calculate gpa 
     public double calculateGPA()  {
         return 0.0;
+    }
+
+    // public double calculateGPA()  {
+    //     this.mathScore
+    // }
+
+
+
+
+
+    private double gradeValue(String grade) { 
+        if (grade.equals("A")) return 4.0;
+        if (grade.equals("B")) return 3.0;
+        if (grade.eqyals("C")) return 2.0;
+        if (grade.equals("D")) return 1.0;
+        return 0.0;
+    }
+    // public String summarizeGPA(){
+    //     student.getName() + "'s gpa is " + student.calculateGPA() + "in grade " + student.getGradeLevel());
+    // }
+
+    public String toString() {
+        return summarizeGPA();
     }
 }
