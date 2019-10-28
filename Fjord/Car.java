@@ -2,8 +2,10 @@ public class Car{
     //data 
     private String car;
     private String type;
-
+    public static final double LITERS_TO_GALLONS = .264172;
+    public static final double TEST_SPEED = 60;
     private double mpg; 
+    private double fuel;
     private int tank;
     private double time;
 
@@ -34,17 +36,17 @@ public class Car{
     public double getTime(){
         return this.time;
     }
-    public double getMPG(){
-        return (60 * time) / (tank*.264712);  
+    public double fuel(){
+        return (TEST_SPEED * this.time) / (this.tank* LITERS_TO_GALLONS);  
     }
 
     public Boolean governmentStandards(){
-        if(this.type == "Sedan" && mpg >= 50){
-            return true;   
-        } else if (this.type == "SUV" &&  mpg >= 40) {
-            return true;
-        } else if ( this.type == "Truck" && mpg >= 30){
-            return true;
+        if(this.type == "Sedan" && fuel >= 50){
+            return true;    
+        } else if (this.type == "SUV" &&  fuel >= 40) {
+            return true; 
+        } else if ( this.type == "Truck" && fuel >= 30){
+            return true; 
         } else { 
             return false;
         }
