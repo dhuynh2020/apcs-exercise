@@ -1,10 +1,10 @@
 public class Cone {
-    // instance variables 
+// instance variables 
     private double radius;
     private double height;
     
     // constructor
-    public cone(double rad, double hei)
+    public Cone(double rad, double hei)
     {
         radius = rad;
         height = hei;

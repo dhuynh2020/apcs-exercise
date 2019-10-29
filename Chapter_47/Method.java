@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Method{
-    public stati void main(String[]args){
+    public static void main(String[]args){
         Scanner scan = new Scanner(System.in);
         double radius, height;
 
@@ -8,7 +8,7 @@ public class Method{
         radius = scan.nextDouble();
 
         System.out.println("Enter Height:");
-        height = scan.NectDouble();
+        height = scan.nextDouble();
 
         Cone cone = new Cone (radius, height);
 
