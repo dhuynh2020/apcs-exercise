@@ -1,18 +1,18 @@
 public class Box{
     //variables
-    public double width;
-    public double height;
-    public double length;
-    public double side;
+    private double width;
+    private double height;
+    private double length;
+    private double side;
     //constructor
-    public box(double.wid, double hei, double len){
+    public Box(double wid, double hei, double len){
         width = wid;
         height = hei;
         length = len;
     }
-    public Box(Box oldBox) {
-        // return new Box(1.25*oldBox.width(), 1.25*oldBox.height(), 1.25*oldBox.length());
-    }
+    // public Box(Box oldBox) {
+    //     // return new Box(1.25*oldBox.width(), 1.25*oldBox.height(), 1.25*oldBox.length());
+    // }
 
     //methods
     
@@ -33,7 +33,7 @@ public class Box{
     public double length() {
         return length;
     }
-    private double faceArea() {
+    public double faceArea() {
         return width*length;
     }
     private double topArea() {
@@ -41,4 +41,5 @@ public class Box{
     }
     private double sideArea() {
         return height*width;
+    }
 }

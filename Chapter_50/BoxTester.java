@@ -3,9 +3,10 @@ public class BoxTester{
 
     Box box = new Box(2.5,5.0,6.0);
 
-    System.out.println( "Area: "  + box.area() + " volume: " + box. volume() );
-
-    System.out.println( "length: " + box.length + " height: " + box. height +
-                         "width:  " + box.width )  ;
+    System.out.println( "Area: "  + box.area() + " Volume: " + box. volume() );
+    
+    System.out.println("top Area: " + box.topArea() );
+    // System.out.println( "Length: " + box.length() + " Height: " + box.height() +
+    //                      " Width: " + box.width());
     }
 }
