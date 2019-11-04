@@ -6,19 +6,28 @@ public class Box{
     private double side;
     //constructor
     public Box(double wid, double hei, double len){
-        width = wid;
-        height = hei;
-        length = len;
+       this.width = wid;
+       this.height = hei;
+       this.length = len;
     }
-    // public Box(Box oldBox) {
-    //     // return new Box(1.25*oldBox.width(), 1.25*oldBox.height(), 1.25*oldBox.length());
-    // }
 
-    //methods
+    public Box ( Box oldBox) {
+        this.width = oldBox.width()*1.25;
+        this.height = oldBox.height()*1.25;
+        this.length = oldBox.length()*1.25;
+    }
+
+    // methods
     
     public double volume() {
         return width*height*length;       
     }
+
+    public Box biggerBox( Box oldBox ) 
+    {
+        return new Box(oldBox.width(),oldBox.height(),oldBox.length());
+    }
+    
 
     public double area() {
         return 2 * faceArea() + 2 * topArea() + 2 * sideArea();
@@ -36,10 +45,10 @@ public class Box{
     public double faceArea() {
         return width*length;
     }
-    private double topArea() {
+    public double topArea() {
         return height*length;
     }
-    private double sideArea() {
+    public double sideArea() {
         return height*width;
     }
 }
