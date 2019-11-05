@@ -4,6 +4,7 @@ public class Box{
     private double height;
     private double length;
     private double side;
+    public boolean nests;
     //constructor
     public Box(double wid, double hei, double len){
        this.width = wid;
@@ -12,9 +13,10 @@ public class Box{
     }
 
     public Box ( Box oldBox) {
-        this.width = oldBox.width()*1.25;
-        this.height = oldBox.height()*1.25;
-        this.length = oldBox.length()*1.25;
+        this.width = oldBox.width();
+        this.height = oldBox.height();
+        this.length = oldBox.length();
+
     }
 
     // methods
@@ -25,22 +27,30 @@ public class Box{
 
     public Box biggerBox( Box oldBox ) 
     {
-        return new Box(oldBox.width(),oldBox.height(),oldBox.length());
+        return new Box(oldBox.width()*1.25,oldBox.height()*1.25,oldBox.length()*1.25);
     }
-    
+
+    public Box smallerBox( Box oldBox)
+    {
+        return new Box(oldBox.width()*0.75,oldBox.height()*0.75,oldBox.length()*0.75);    
+    }
 
     public double area() {
         return 2 * faceArea() + 2 * topArea() + 2 * sideArea();
-        // return 2*((width*length)+(height*length)+(height*width));
+    }
+
+    public boolean nests ( Box outsideBox)
+    {
+        return outsideBox.length()>= length && outsideBox.height()>= height && outsideBox.width() >= width;
     }
     public double width() {
-        return width;
+        return this.width;
     }
     public double height() {
-        return height;
+        return this.height;
     }
     public double length() {
-        return length;
+        return this.length;
     }
     public double faceArea() {
         return width*length;
