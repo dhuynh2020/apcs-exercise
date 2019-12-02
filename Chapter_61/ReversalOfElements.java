@@ -17,10 +17,10 @@ class ReversalOfElements
     }
       
     // write out the result
-  //  for ( int j=0; j < result.length; j++)
-    //{
+   for ( int j=0; j < result.length; j++)
+    {
 
-    //}
+    }
 
     System.out.println(data[0]+" "+data[1]+" "+data[2]+" "+data[3]+" "+data[4]+" "+data[5]+" "+data[6]+" "+data[7]+" "+data[8]+" "+data[9]+" "+data[10]+" "+data[11]+" "+data[12]+" "+data[13]); 
     System.out.println(result[0]+" "+result[1]+" "+result[2]+" "+result[3]+" "+result[4]+" "+result[5]+" "+result[6]+" "+result[7]+" "+result[8]+" "+result[9]+" "+result[10]+" "+result[11]+" "+result[12]+" "+result[13]); 
