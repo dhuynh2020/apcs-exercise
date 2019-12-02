@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Odious{
+public class Flag{
 
 
   public static void main (String[] args) 
@@ -10,6 +10,9 @@ public class Odious{
     System.out.println("Please enter a nonnegative number");
     int usrInput = scan.nextInt();
     
+    if (usrInput < 0 || usrInput > 20){
+        usrInput = -1; 
+    }
     int remainder = usrInput % 2; 
     int remainder2 = 0;
     int dividend = usrInput ;
