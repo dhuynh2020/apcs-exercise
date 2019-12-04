@@ -8,6 +8,7 @@ public class GPA{
         double gpa = student.calculateGPA();
         System.out.println(gpa);
 
+
         gpa = student2.calculateGPA();
 
         String name = student.getName();

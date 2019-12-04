@@ -47,7 +47,7 @@ public class Student{
         return this.csScore;
     }
 
-    publi String getEngScore(){
+    public String getEngScore(){
         return this.engScore;
     }
 
@@ -65,7 +65,7 @@ public class Student{
         }
 
     }
-    calculate gpa 
+    //calculate gpa 
     public double calculateGPA()  {
         return 0.0;
     }
