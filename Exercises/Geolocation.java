@@ -5,10 +5,6 @@ import java.util.Scanner;
         private double longitude;
         private final double radius = 6371; 
         private String id; 
-        private double distance;
-        private double c; 
-        private double a; 
-        // private 
     
 
     public Geolocation(String id, double latitude, double longitude){
@@ -25,12 +21,27 @@ import java.util.Scanner;
 
 
     // getters and setters
-    public double getDistance(){ 
-        distance = radius * c; 
+    public double getDistance(Geolocation other){ 
+        private double c = getC(other); 
+        distance = radius * c;
+        return distance; 
     } 
 
-    public double getC(){
+    private double getC(){
+        private double a = getA(other); 
         c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt((1-a)));
+        return c;
+    }
+
+    private double getA(){
+        private double a; 
+        a = Math.pow(Math.sin(),2)
+    }
+
+    public double differenceLatitude(){
+        // private double difference = getDistance();
+
+
     }
     public String getId(){
         return this.id;
