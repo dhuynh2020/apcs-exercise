@@ -22,27 +22,23 @@ import java.util.Scanner;
 
     // getters and setters
     public double getDistance(Geolocation other){ 
-        private double c = getC(other); 
+        double c = getC(other.getA()); 
+        double a = getA();
+        double latitudeChange;
+        c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt((1-a)));
         distance = radius * c;
-        return distance; 
+        latitudeChange = Math.pow(Math.Sin(Math.abs(this.latitude - other.getLatitude() ),2) + Math.cos(this.longitude) * Math.cos(other.getLongitude())
+                        * Math.pow(Math.sin(Math.abs(this.longitude - other.longitude())), 2) );
+        return latitudeChange; 
     } 
 
-    private double getC(){
-        private double a = getA(other); 
-        c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt((1-a)));
-        return c;
-    }
 
-    private double getA(){
-        private double a; 
-        a = Math.pow(Math.sin(),2)
-    }
-
-    public double differenceLatitude(){
-        // private double difference = getDistance();
+  
+    // public double differenceLatitude(){
+    //     // private double difference = getDistance();
 
 
-    }
+    // }
     public String getId(){
         return this.id;
     }
