@@ -81,7 +81,7 @@ public class Student{
     private double gradeValue(String grade) { 
         if (grade.equals("A")) return 4.0;
         if (grade.equals("B")) return 3.0;
-        if (grade.eqyals("C")) return 2.0;
+        if (grade.equals("C")) return 2.0;
         if (grade.equals("D")) return 1.0;
         return 0.0;
     }
