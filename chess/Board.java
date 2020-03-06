@@ -54,7 +54,7 @@ public class Board {
 
 
                 output += middle;
-                output += "]";
+                output += "]" + "  " ;
             }
             output += "\n";
             // if(output != null)
