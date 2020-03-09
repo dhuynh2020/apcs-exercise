@@ -46,8 +46,8 @@ public class ChessGame{
     public void placeBishop(Board board, int rank, int file){
         int influence = 0;
         board.getSquare(rank, file).setPiece("b");
-        for(int row = 1; row <= 8; row++){
-            for( int col = 1 ; col <= 8; col++){
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; col <= board.getLen(); col++){
                 int rankDist = Math.abs(rank - row);
                 int fileDist = Math.abs(file - col);
                 if (rankDist == fileDist){
@@ -60,11 +60,11 @@ public class ChessGame{
         System.out.println("Bishop's Influence: " + influence);
     }
 
-    public void placeQueen(Board board, int rank, int file){
+    public int placeQueen(Board board, int rank, int file){
         int influence = 0;
         board.getSquare(rank, file).setPiece("Q");
-        for(int row = 1; row <= 8; row++){
-            for(int col = 1; col <=8; col++){
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; col <= board.getLen(); col++){
                 int rankDist = Math.abs(rank - row);
                 int fileDist = Math.abs(file - col);
                 if (rankDist == fileDist){
@@ -81,21 +81,36 @@ public class ChessGame{
                 }
             }
         }
-        System.out.println("Queen's Influence: " + influence);
+        influence = influence - 2; 
+        // System.out.println("Queen's Influence: " + influence);
+        return influence;
     }
 
-    public void mostInfluence(int rank, int file){
-        int influence = 0; 
-
+    public int[] mostInfluence(){
+        int[] pos = new int[2];
+        int mostInfluence = placeQueen(board,1,1);
+        for(int row = 1; row <= 8; row++){
+            for(int col = 1; col <= 8; col++){
+                if(placeQueen(board,row,col) >= mostInfluence){
+                    mostInfluence = placeQueen(board, row, col);
+                    pos[0] = row;
+                    pos[1] = col;
+                
+                }
+            }
+        }
+        return pos;
     }
+
+    // public square 
 
     public static void main(String[]args){
         Board board = new Board();
         ChessGame game = new ChessGame();
         // game.placeRook(board,2,3);
         // game.placeBishop(board, 4, 4);
-        // game.placeKnight(board, 6, 4);
-        game.placeQueen(board, 5, 5);
+        game.placeKnight(board, 6, 4);
+        // game.placeQueen(board, 5, 5);
         System.out.println(board);
     }
 }

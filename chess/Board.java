@@ -33,6 +33,14 @@ public class Board {
         return squares[row][col];
     }
 
+    public int getWid(){
+        return squares.length;
+    }
+    public int getLen(){
+        return squares[0].length;
+    
+    }
+
     public String toString(){
         String output = "";
         String middle = "";
