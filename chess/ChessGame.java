@@ -1,5 +1,5 @@
 import java.awt.Color;
-
+import java.util.ArrayList;
 public class ChessGame{
     private Board board;
 
@@ -7,12 +7,12 @@ public class ChessGame{
         this.board = new Board();
     }
 
-    public void placeRook(Board board,int rank, int file) {
+    public void placeRook(int rank, int file) {
         // clearBoard();
         int influence = 0;
         board.getSquare(rank,file).setPiece("r");
-        for(int row = 1; row <= 8; row++){
-            for(int col = 1; col <= 8; col++){
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; col <= board.getLen(); col++){
                 if(row == rank){
                     board.getSquare(row, col).toggleHighlight();
                     influence++; 
@@ -28,12 +28,12 @@ public class ChessGame{
         System.out.println("Rook's Influence: " + influence);
     }
     
-    public void placeKnight(Board board,int rank, int file) {
+    public void placeKnight(int rank, int file) {
         // clearBoard();
         int influence = 0;
         board.getSquare(rank,file).setPiece("k");
-        for(int row = 1; row <=8; row++ ){
-            for(int col = 1; col <=8; col++){
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; col <= board.getLen(); col++){
                if(row != rank && col != file && Math.abs(row - rank) + Math.abs(col - file) == 3){
                    board.getSquare(row, col).toggleHighlight();
                    influence= influence + 1;
@@ -43,7 +43,7 @@ public class ChessGame{
         System.out.println("Knight's Influence: " + influence);
     }
 
-    public void placeBishop(Board board, int rank, int file){
+    public void placeBishop( int rank, int file){
         int influence = 0;
         board.getSquare(rank, file).setPiece("b");
         for(int row = 1; row <= board.getWid(); row++){
@@ -60,7 +60,12 @@ public class ChessGame{
         System.out.println("Bishop's Influence: " + influence);
     }
 
-    public int placeQueen(Board board, int rank, int file){
+
+    public String toString(){
+        return board.toString();
+    }
+
+    public int placeQueen(int rank, int file){
         int influence = 0;
         board.getSquare(rank, file).setPiece("Q");
         for(int row = 1; row <= board.getWid(); row++){
@@ -86,16 +91,26 @@ public class ChessGame{
         return influence;
     }
 
-    public int[] mostInfluence(){
-        int[] pos = new int[2];
-        int mostInfluence = placeQueen(board,1,1);
-        for(int row = 1; row <= 8; row++){
-            for(int col = 1; col <= 8; col++){
-                if(placeQueen(board,row,col) >= mostInfluence){
-                    mostInfluence = placeQueen(board, row, col);
+    public Integer[] maxQueenPositions(){
+        ArrayList<Integer[]> positions = new ArrayList<>();
+        Integer[] pos = new Integer[2];
+        int mostInfluence = 0;
+
+        // Gets the most Influence
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; col <= board.getLen(); col++){
+                if(placeQueen(row,col) > mostInfluence){
+                    mostInfluence = placeQueen( row, col);
+                }
+            }
+        }
+
+        for(int row = 1; row <= board.getWid(); row++){
+            for(int col = 1; row <=board.getLen(); row++){
+                if(placeQueen(row,col) == mostInfluence ){
                     pos[0] = row;
-                    pos[1] = col;
-                
+                    pos[1] = col; 
+                    positions.add(pos);
                 }
             }
         }
@@ -107,10 +122,12 @@ public class ChessGame{
     public static void main(String[]args){
         Board board = new Board();
         ChessGame game = new ChessGame();
-        game.placeRook(board,2,3);
-        // game.placeBishop(board, 4, 4);
-        // game.placeKnight(board, 6, 4);
-        // game.placeQueen(board, 5, 5);
-        System.out.println(board);
+        // game.placeRook(2,3);
+        // game.placeBishop(4, 4);
+        // game.placeKnight(6, 4);
+        game.placeQueen(5, 5);
+        // game.mostInfluence();
+        System.out.println(game);
+
     }
 }
