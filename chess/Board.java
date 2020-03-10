@@ -59,13 +59,11 @@ public class Board {
                 if(squares[row][col].getPiece() != null){
                     middle = squares[row][col].getPiece(); 
                 }
-
-
                 output += middle;
                 output += "]" + "  " ;
             }
             output += "\n";
-            // if(output != null)
+
         }
         return output;
     }

@@ -11,7 +11,7 @@ public class ChessGame{
         // clearBoard();
         int influence = 0;
         board.getSquare(rank,file).setPiece("r");
-        for(int row =1; row <= 8; row++){
+        for(int row = 1; row <= 8; row++){
             for(int col = 1; col <= 8; col++){
                 if(row == rank){
                     board.getSquare(row, col).toggleHighlight();
@@ -107,9 +107,9 @@ public class ChessGame{
     public static void main(String[]args){
         Board board = new Board();
         ChessGame game = new ChessGame();
-        // game.placeRook(board,2,3);
+        game.placeRook(board,2,3);
         // game.placeBishop(board, 4, 4);
-        game.placeKnight(board, 6, 4);
+        // game.placeKnight(board, 6, 4);
         // game.placeQueen(board, 5, 5);
         System.out.println(board);
     }
